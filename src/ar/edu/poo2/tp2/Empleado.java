@@ -1,8 +1,11 @@
 package ar.edu.poo2.tp2;
 
 import java.time.LocalDate;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
+import java.util.Scanner;
 
-public class Empleado {
+public abstract class Empleado {
 	private String nombre;
 	private String direccion;
 	private String estadoCivil;
@@ -62,7 +65,29 @@ public class Empleado {
 		this.recibo = recibo;
 	}
 	
+	public abstract double calcularSueldoNeto();
 	
+	public abstract double calcularRetenciones();
+		
+
+	int calcularEdad() {
+		Scanner teclado = new Scanner(System.in);
+		int dia = teclado.nextInt();
+		int mes = teclado.nextInt();
+		int anio = teclado.nextInt();
+		teclado.close();
+		LocalDate fechaHoy = LocalDate.now();
+		LocalDate fechaNacimiento = LocalDate.of(anio, mes, dia);
+		Period periodo = Period.between(fechaNacimiento, fechaHoy);
+
+		return periodo.getYears();
+	}
 	
+	public abstract double calcularDescuentosObraSocial();
+	
+	public abstract double calcularAportes();
 	
 }
+
+
+

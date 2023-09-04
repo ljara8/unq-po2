@@ -45,5 +45,39 @@ public class Contratado extends Empleado{
 	public void setMedioPago(String medioPago) {
 		this.medioPago = medioPago;
 	}
+
+
+
+
+	@Override
+	public double calcularSueldoNeto() {
+		return this.getSueldoBasico() - 50;
+		
+	}
+
+
+
+
+	@Override
+	public double calcularRetenciones() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
+
+	@Override
+	public double calcularDescuentosObraSocial() {
+		return 0;
+	}
+
+
+
+
+	@Override
+	public double calcularAportes() {
+		return 0;
+	}
 	
 }
