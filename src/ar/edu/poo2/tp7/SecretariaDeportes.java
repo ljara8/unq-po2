@@ -16,20 +16,20 @@ public class SecretariaDeportes {
 	public List<ActividadSemanal> getActividadesComplejidad(int n) {
 		return actividades.stream().filter(act -> act.getDeporte().getComplejidad() == n).toList();
 	}
-
+	/*
 	public ActividadSemanal getActividadMenorCosto(ActividadSemanal actividad) {
 		return this.actividadesDeDeporte(actividad.getDeporte()).stream().filter(act -> act.getCoste() == this.getMenorCosteDeActividad(Deporte d));
 	}
-
+*/
 	public List<ActividadSemanal> actividadesDeDeporte(Deporte d) {
 		return actividades.stream().filter(s -> s.getDeporte() == d).toList();
 	}
-	
+/*	
 	public ActividadSemanal actividadMenorCoste(Deporte d) {
-		return this.actividadesDeDeporte(d).stream().min(Comparator.comparing(act -> act.getCoste())));
+		return this.actividadesDeDeporte(d).stream().min(Comparator.comparing(act -> act.getCoste()));
 	}
 	
-	
+*/	
 	public int getMinimoDeActividadesDeporte(Deporte deporte) {
 		return this.actividadesDeDeporte(deporte).stream().map(act -> act.getCoste()).min(Comparator.naturalOrder()).get();
 	}
