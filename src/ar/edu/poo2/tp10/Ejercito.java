@@ -8,11 +8,9 @@ public class Ejercito implements Personajes {
 
 	@Override
 	public void caminar() {
-		((Ejercito) this.getPersonajes()).caminar();
-	}
-
-	public List<Personajes> getPersonajes() {
-		return personajes;
+		for (Personajes personaje : personajes) {
+			personaje.caminar();
+		}
 	}
 
 }
